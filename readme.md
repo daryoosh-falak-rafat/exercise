@@ -61,7 +61,7 @@ Conclusion:
       - I use docker every day in my current role but have never gone through a setup from scratch. While I now think I should have gone for an approach that was quicker to set up I am happy that I managed to get it set up and working even thought it threw up many issues that I managed to solve
     - How I would prefer to solve issues (if I can do it at a database level I will try)
     - How I try to ensure code is readable and self documenting
-    - My consideration to the u
+    - My consideration to the next person who might work on this code
     - What I feel is the start of a well-structured and self-contained application
 - What I would have done under different circumstances
     - Separate routes into groups and then have them in separate modules
