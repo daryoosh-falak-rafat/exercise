@@ -15,6 +15,7 @@ final class CreateUserTableMigration extends AbstractMigration
             ->addColumn('gender', 'string', ['null' => false])
             ->addColumn('age', 'integer', ['null' => false])
             ->addColumn('created', 'datetime', ['null' => false, 'default' => 'CURRENT_TIMESTAMP'])
+            ->addIndex(['email'], ['name' => 'unique_email', 'unique' => true])
             ->create();
     }
 }

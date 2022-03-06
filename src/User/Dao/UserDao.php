@@ -12,12 +12,19 @@ class UserDao {
         return (new UserMapper())->map($result->fetch_assoc());
     }
 
+    public function getUserByEmail(string $email): User {
+        $connection = new \mysqli('db', 'root', 'example', 'exercise', 3306);
+        $sql = 'SELECT * FROM user WHERE email = "' . $connection->escape_string($email) . '"';
+        $result = $connection->query($sql);
+        return (new UserMapper())->map($result->fetch_assoc());
+    }
+
     public function createUser(User $user): void {
         $connection = new \mysqli('db', 'root', 'example', 'exercise', 3306);
         $sql = 'INSERT INTO user (id, email, password, name, gender, age) VALUES ('
             . '"' . $connection->escape_string($user->getId()) . '"' . ','
             . '"' . $connection->escape_string($user->getEmail()) . '"' . ','
-            . '"' . '#' . '"' . ','
+            . '"' . password_hash($user->getName(), PASSWORD_DEFAULT) . '"' . ','
             . '"' . $connection->escape_string($user->getName()) . '"' . ','
             . '"' . $connection->escape_string($user->getGender()) . '"' . ','
             . '"' . $connection->escape_string($user->getAge()) . '"'

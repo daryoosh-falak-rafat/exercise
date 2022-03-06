@@ -8,6 +8,7 @@ class User {
     private string $name;
     private string $gender;
     private int $age;
+    private string $password;
 
     public function getId(): string {
         return $this->id;
@@ -47,5 +48,13 @@ class User {
 
     public function setAge(int $age): void {
         $this->age = $age;
+    }
+
+    public function getPassword(): string {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): void {
+        $this->password = $password;
     }
 }

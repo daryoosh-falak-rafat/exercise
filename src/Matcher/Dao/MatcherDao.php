@@ -6,7 +6,11 @@ use Exercise\User\Model\User;
 class MatcherDao {
     public function getMatches(User $user): array {
         $connection = new \mysqli('db', 'root', 'example', 'exercise', 3306);
-        $sql = 'SELECT name, gender, age  FROM user ORDER BY RAND() limit 5';
+        $sql = 'SELECT u.name, u.gender, u.age  FROM user u
+                LEFT JOIN swipe s on s.profile_id = u.id
+                WHERE u.id != "' . $user->getId() .'" 
+                AND (s.user_id != "' . $user->getId() .'" OR s.user_id IS NULL)
+                ORDER BY RAND() LIMIT 5';
         $result = $connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }

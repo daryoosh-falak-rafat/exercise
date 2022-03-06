@@ -11,6 +11,7 @@ class UserMapper {
         $user->setGender($queryResult['gender']);
         $user->setEmail($queryResult['email']);
         $user->setName($queryResult['name']);
+        $user->setPassword($queryResult['password']);
         return $user;
     }
 }
