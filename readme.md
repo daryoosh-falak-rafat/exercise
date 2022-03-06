@@ -6,14 +6,28 @@ Environment setup instructions:
   - Docker compose
 - Docker
   - Clone the repo
+    - git clone https://github.com/daryoosh-falak-rafat/exercise.git
   - Ensure you are in the project root
   - Build docker containers
+    - sudo docker-compose build
   - Ready containers
+    - sudo docker-compose uo -d
   - Move inside the server container
-  - Composer update
+    - docker exec -it exercise_php_1 bash
+  - Download dependencies
+    - composer up
 - Phinx
   - Create db
+    - go to localhost:8080
+    - login with
+      - System: MySQL
+      - Server: db
+      - Username: root
+      - Password: example
+      - Click login
+    - When you're in create a database called exercise (leave any options as default)
   - Migrate tables
+    - vendor/bin/phinx migrate
 
 There are some parts I didn't have time to complete. Here's what I would have done
 - The bonus part
@@ -26,7 +40,7 @@ There are some parts I didn't have time to complete. Here's what I would have do
 
 Conclusion
 - What I thought
-    - More time-consuming than I thought it would be
+    - More time-consuming than I expected it would be
     - It takes me additional time to refresh my mind about some of the early steps that are required for application development due to working on a singular monolithic application for such a long time
     - Very satisfying
     - I perhaps spent too much time trying to ensure the environment was as easy as possible to set up
@@ -35,13 +49,16 @@ Conclusion
       - I use docker every day in my current role but have never gone through a setup from scratch. While I now think I should have gone for an approach that was quicker to set up I am happy that I managed to get it set up and working even thought it threw up many issues that I managed to solve
     - How I would prefer to solve issues (if I can do it at a database level I will try)
     - How I try to ensure code is readable and self documenting
+    - My consideration to the u
     - What I feel is the start of a well-structured and self-contained application
 - What I would have done under different circumstances
     - Separate routes into groups and then have them in separate modules
-    - Full dependency injection
+    - Full dependency injection and avoided using 'new' everywhere to create classes
     - Follow REST standards
+    - Ensure proper response codes are returned for each request
+    - Parameter checking to provide appropriate response messages if there are any errors in what is sent
     - Use an ORM or database abstraction package such as DBAL to make the DAOs cleaner
     - Use middleware to ensure all requests apart from login are authenticated
     - Use Phinx seeders to allow the API to be used straight away without needing to create users or swipes
     - Added unit and integration tests to avoid the need to manually test each endpoint
-    -  Implement better logging and also have a debugger like Xdebug to speed things along
+    - Implement better logging and also have a debugger like Xdebug to speed things along
