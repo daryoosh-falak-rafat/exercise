@@ -51,10 +51,11 @@ There are some parts I didn't have time to complete. Here's what I would have do
 
 Conclusion:
 - What I thought
-    - More time-consuming than I expected it would be
+    - More time-consuming than I expected it would be!
     - It takes me additional time to refresh my mind about some of the early steps that are required for application development due to working on a singular monolithic application for such a long time
-    - Very satisfying
+    - Very satisfying using a different approach and solving all the little issues that pop up along the way
     - I perhaps spent too much time trying to ensure the environment was as easy as possible to set up
+    - I would have liked to demonstrate how I would take on larger projects or solve architectural challenges. I hope some of that has come across with this exercise
 - What I tried to show
     - A willingness to use things I haven't used before (or for a very long time)
       - I use docker every day in my current role but have never gone through a setup from scratch. While I now think I should have gone for an approach that was quicker to set up I am happy that I managed to get it set up and working even thought it threw up many issues that I managed to solve
@@ -74,3 +75,5 @@ Conclusion:
     - Use Phinx seeders to allow the API to be used straight away without needing to create users or swipes
     - Added unit and integration tests to avoid the need to manually test each endpoint
     - Implement better logging and also have a debugger like Xdebug to speed things along
+
+Thanks for your consideration. If you have any questions about anything on something doesn't work, please let me know
