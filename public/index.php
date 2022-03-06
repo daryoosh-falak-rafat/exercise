@@ -75,7 +75,7 @@ $app->get('/user/create', function (Request $request, Response $response, $args)
     $user->setId(bin2hex(random_bytes(20)));
     $user->setEmail($faker->email());
     $user->setName($faker->name());
-    $user->setGender($faker->jobTitle());
+    $user->setGender(array_rand(['m' => 'male', 'f' => 'female']));
     $user->setAge($faker->numberBetween(18, 80));
     (new UserDao())->createUser($user);
     $userInformation = [
