@@ -1,7 +1,7 @@
 muzmatch exercise
 
 Environment setup instructions:
-- Ensure you have installed
+- Ensure you have these installed
   - Git
   - Docker compose
 - Docker
